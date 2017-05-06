@@ -14,10 +14,10 @@ export class MediaItemFormComponent {
   form;
 
   constructor(
-    private formBuilder: FormBuilder,
-    private mediaItemService: MediaItemService,
-    @Inject(lookupListToken) public lookupLists,
-    private router: Router) {}
+      private formBuilder: FormBuilder,
+      private mediaItemService: MediaItemService,
+      @Inject(lookupListToken) public lookupLists,
+      private router: Router) {}
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -52,8 +52,8 @@ export class MediaItemFormComponent {
 
   onSubmit(mediaItem) {
     this.mediaItemService.add(mediaItem)
-      .subscribe(() => {
-        this.router.navigate(['/', mediaItem.medium]);
-      });
+        .subscribe(() => {
+          this.router.navigate(['/', mediaItem.medium]);
+        });
   }
 }
